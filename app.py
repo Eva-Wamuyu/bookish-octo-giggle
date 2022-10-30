@@ -14,7 +14,12 @@ def endpoint():
         "bio": "Backend dev,Game dev,skater and biker peng"
         }
     data_as_json = json.dumps(data)
-    return data_as_json
+    response = app.response_class(
+        response = data_as_json,
+        status = 200,
+        mimetype='application/json'
+    )
+    return response
 
 
 if __name__ == '__main__':
